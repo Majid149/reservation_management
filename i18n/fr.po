@@ -1,0 +1,399 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* reservation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-18 16:19+0000\n"
+"PO-Revision-Date: 2022-03-18 16:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_reservation_kanban
+msgid "<strong>Duration:</strong>"
+msgstr "Durée"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_reservation_kanban
+msgid "<strong>End of Reservation:</strong>"
+msgstr "La fin de reservation"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_reservation_kanban
+msgid "<strong>Reservation Date:</strong>"
+msgstr "La date de reservation"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_reservation_kanban
+msgid "<strong>State:</strong>"
+msgstr "status"
+
+#. module: reservation
+#: model:ir.ui.menu,name:reservation.menu_all_reservations
+msgid "All Reservations"
+msgstr "Toutes les reservations"
+
+#. module: reservation
+#: model:ir.ui.menu,name:reservation.menu_analyse_root
+msgid "Analyse"
+msgstr "Analyse"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__article
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_search
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Article"
+msgstr "Article"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_gt1_search
+msgid "At least Reservation"
+msgstr "Au moin une reservation"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: reservation
+#: model:ir.model.fields.selection,name:reservation.selection__reservation_reservation__state__canceled
+msgid "Canceled"
+msgstr "Annulée"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_search
+msgid "Canceled Reservations"
+msgstr "Reservations Annulées"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__client
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_search
+msgid "Client"
+msgstr "Client"
+
+#. module: reservation
+#: model:ir.actions.act_window,name:reservation.client_action
+#: model:ir.ui.menu,name:reservation.menu_clients
+msgid "Clients"
+msgstr "Clients"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Close"
+msgstr "Cloturer"
+
+#. module: reservation
+#: model:ir.model.fields.selection,name:reservation.selection__reservation_reservation__state__closed
+msgid "Closed"
+msgstr "Cloturée"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_search
+msgid "Closed Reservations"
+msgstr "Reservations Cloturées"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: reservation
+#: model:ir.model.fields.selection,name:reservation.selection__reservation_reservation__state__confirmed
+msgid "Confirmed"
+msgstr "Confirmée"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_search
+msgid "Confirmed Reservations"
+msgstr "Reservations Confirmées"
+
+#. module: reservation
+#: model:ir.model,name:reservation.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Create New"
+msgstr "Créer nouveau"
+
+#. module: reservation
+#: model:ir.actions.server,name:reservation.your_id
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Create a quote"
+msgstr "Créer un devis"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__create_date
+msgid "Created on"
+msgstr "Créé en"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_graph
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_search
+msgid "Date of Reservation"
+msgstr "Date de reservation"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Day"
+msgstr "Jour"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Devis"
+msgstr "Devis"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__duration
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Duration"
+msgstr "Durée"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__duration_day
+msgid "Duration Day"
+msgstr "Durée en jour"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__duration_hour
+msgid "Duration Hour"
+msgstr "Durée en heures"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__duration_month
+msgid "Duration Month"
+msgstr "Durée en mois"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__total_duration_hours
+msgid "Duration in hours"
+msgstr "Durée en heures"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__end_reservation
+msgid "End Reservation"
+msgstr "Fin de reservation"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_graph
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_search
+msgid "Group By"
+msgstr "Groupé par"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__id
+msgid "ID"
+msgstr "ID"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Idea form"
+msgstr ""
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Month"
+msgstr "Mois"
+
+#. module: reservation
+#: model:ir.ui.menu,name:reservation.menu_canceled_reservation_per_month
+msgid "My Canceled Reservations per month"
+msgstr "Reservations annulées par mois"
+
+#. module: reservation
+#: model:ir.ui.menu,name:reservation.menu_my_reservations
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_search
+msgid "My Reservations"
+msgstr "Mes Reservations"
+
+#. module: reservation
+#: model:ir.ui.menu,name:reservation.menu_reservation_per_month
+msgid "My Reservations per month"
+msgstr "Mes Reservations par mois"
+
+#. module: reservation
+#: model:ir.actions.act_window,name:reservation.reporting_canceled_reservation_action
+msgid "My canceled reservations per month"
+msgstr "Mes Reservations annulées par mois"
+
+#. module: reservation
+#: model:ir.actions.act_window,name:reservation.reporting_action
+msgid "My reservations per month"
+msgstr "Mes Reservations annulées par mois"
+
+#. module: reservation
+#: model:ir.model.fields.selection,name:reservation.selection__reservation_reservation__state__new
+msgid "New"
+msgstr "Nouveau"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_search
+msgid "New Reservations"
+msgstr "Nouvelles Reservations"
+
+#. module: reservation
+#: model:ir.actions.act_window,name:reservation.reporting_hours_reservation_action
+#: model:ir.ui.menu,name:reservation.menu_number_hours_per_month
+msgid "Number of hours reserved per month"
+msgstr "Nombre d'heures reservées par mois"
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__order_id
+msgid "Order Reference"
+msgstr ""
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__price_unit
+msgid "Price Unit"
+msgstr ""
+
+#. module: reservation
+#: model:ir.actions.act_window,name:reservation.sales_action
+msgid "Quotation"
+msgstr ""
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__reference
+msgid "Reference"
+msgstr ""
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__report
+msgid "Report"
+msgstr ""
+
+#. module: reservation
+#: model:ir.ui.menu,name:reservation.menu_reporting_root
+msgid "Reporting"
+msgstr ""
+
+#. module: reservation
+#: model:ir.actions.act_window,name:reservation.my_reservation_action
+#: model:ir.actions.act_window,name:reservation.reservation_action
+#: model:ir.model.fields,field_description:reservation.field_res_partner__reservation_ids
+#: model:ir.model.fields,field_description:reservation.field_res_users__reservation_ids
+#: model:ir.model.fields,field_description:reservation.field_sale_order__reservation_ids
+#: model:ir.module.category,name:reservation.module_reservation
+msgid "Reservation"
+msgstr ""
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_sale_order__reservation_count
+msgid "Reservation Count"
+msgstr ""
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__reservation_date
+msgid "Reservation Date"
+msgstr "Date de reservation"
+
+#. module: reservation
+#: model:ir.ui.menu,name:reservation.menu_reservation_root
+msgid "Reservation Management"
+msgstr "Gestion des reservations"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.my_client_list
+#: model_terms:ir.ui.view,arch_db:reservation.sale_order_view_list_inherit_quotation
+msgid "Reservation ids"
+msgstr ""
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.sale_order_view_form_inherit_quotation
+msgid "Reservation(s)"
+msgstr ""
+
+#. module: reservation
+#: model:ir.ui.menu,name:reservation.menu_reservations_root
+#: model_terms:ir.ui.view,arch_db:reservation.sale_order_view_form_inherit_quotation
+msgid "Reservations"
+msgstr ""
+
+#. module: reservation
+#: model:res.groups,name:reservation.overtime_manager
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: reservation
+#: model:ir.ui.menu,name:reservation.menu_sales
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: reservation
+#: model:ir.model,name:reservation.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__state
+msgid "State"
+msgstr "Status"
+
+#. module: reservation
+#: model:ir.model,name:reservation.model_reservation_reservation
+msgid "This is the reservation model"
+msgstr ""
+
+#. module: reservation
+#: model:ir.model.fields,field_description:reservation.field_reservation_reservation__user_id
+#: model:res.groups,name:reservation.overtime_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: reservation
+#: model:ir.module.category,description:reservation.module_reservation
+msgid "User access level for Reservation module"
+msgstr ""
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "Validate"
+msgstr "Valider"
+
+#. module: reservation
+#: model:ir.model.fields.selection,name:reservation.selection__reservation_reservation__state__validated
+msgid "Validated"
+msgstr "Validée"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_search
+msgid "Validated Reservations"
+msgstr "Reservations Validées"
+
+#. module: reservation
+#: model_terms:ir.ui.view,arch_db:reservation.reservation_view_id
+msgid "hour"
+msgstr "heure"

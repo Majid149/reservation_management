@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="reservation_gt1_search">
+        <field name="name">search reservation</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <filter name="there_is_reservation" string="At least Reservation"
+                        domain="[('reservation_ids', '!=', False)]"/>
+
+            </field>
+        </field>
+
+    </record>
+
+    <record model="ir.ui.view" id="my_client_list">
+        <field name="name">client.list</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
+                <field name="reservation_ids" string="Reservation ids"/>
+            </field>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="client_action">
+        <field name="name">Clients</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_there_is_reservation': 1}</field>
+    </record>
+</odoo>

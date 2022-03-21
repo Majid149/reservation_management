@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_reservation_reservation,reservation.reservation,model_reservation_reservation,base.group_user,1,1,1,1
+access_res_partner,res.partner,model_res_partner,base.group_user,1,1,1,1
+access_sale_order,sale.order,model_sale_order,base.group_user,1,1,1,1
+access_admin,Access Manager,model_reservation_reservation,overtime_user,1,1,1,0
+access_user,Acess user,model_reservation_reservation,overtime_manager,1,1,1,1

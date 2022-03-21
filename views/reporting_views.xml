@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="reservation_graph">
+            <field name="name">search reservation</field>
+            <field name="model">reservation.reservation</field>
+            <field name="arch" type="xml">
+                <search>
+                    <group string="Group By">
+                        <filter name="group_by_reservation_date" string="Date of Reservation"
+                                domain="[('user_id', '=', uid)]"
+                                context="{'group_by': 'reservation_date:month'}"/>
+                    </group>
+                </search>
+            </field>
+
+        </record>
+<!--        <record model="ir.ui.view" id="reservation_pivot">-->
+<!--            <field name="name">pivot reservation</field>-->
+<!--            <field name="model">reservation.reservation</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <pivot>-->
+<!--                    <field name="total_duration_hours" type="measure"/>-->
+<!--                </pivot>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+        <record model="ir.actions.act_window" id="reporting_canceled_reservation_action">
+            <field name="name">My canceled reservations per month</field>
+            <field name="res_model">reservation.reservation</field>
+            <field name="view_mode">graph,pivot</field>
+            <field name="context">{'search_default_group_by_reservation_date': 1,'search_default_canceled': 1}</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="reporting_action">
+            <field name="name">My reservations per month</field>
+            <field name="res_model">reservation.reservation</field>
+            <field name="view_mode">graph,pivot</field>
+            <field name="context">{'search_default_group_by_reservation_date': 1,'search_default_my_reservations': 1}</field>
+        </record>
+
+         <record model="ir.actions.act_window" id="reporting_hours_reservation_action">
+            <field name="name">Number of hours reserved per month</field>
+            <field name="res_model">reservation.reservation</field>
+            <field name="view_mode">pivot</field>
+            <field name="context">{'search_default_group_by_reservation_date': 1,'pivot_measures': ['total_duration_hours']}</field>
+<!--            <field name="view_id" ref="reservation_pivot"/>-->
+        </record>
+
+    </data>
+</odoo>

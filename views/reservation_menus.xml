@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="menu_reservation_root" name="Reservation Management">
+        <menuitem id="menu_reservations_root" name="Reservations">
+            <menuitem id="menu_my_reservations" action="my_reservation_action" name="My Reservations" groups="overtime_user"/>
+            <menuitem id="menu_all_reservations" action="reservation_action" name="All Reservations" groups="overtime_manager"/>
+        </menuitem>
+        <menuitem id="menu_reporting_root" name="Reporting" groups="overtime_manager">
+            <menuitem id="menu_reservation_per_month" action="reporting_action" name="My Reservations per month"/>
+            <menuitem id="menu_canceled_reservation_per_month" action="reporting_canceled_reservation_action" name="My Canceled Reservations per month"/>
+            <menuitem id="menu_number_hours_per_month" action="reporting_hours_reservation_action" name="Number of hours reserved per month"/>
+        </menuitem>
+         <menuitem id="menu_analyse_root" name="Analyse" groups="overtime_manager">
+            <menuitem id="menu_clients" action="client_action" name="Clients"/>
+            <menuitem id="menu_sales" action="sales_action" name="Sales"/>
+        </menuitem>
+    </menuitem>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="overtime_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_reservation"/>
+    </record>
+    <record id="overtime_manager" model="res.groups">
+        <field name="name">Responsible</field>
+        <field name="category_id" ref="module_reservation"/>
+        <field name="implied_ids" eval="[(4, ref('overtime_user'))]"/>
+    </record>
+</odoo>

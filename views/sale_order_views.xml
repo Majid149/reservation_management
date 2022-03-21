@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    <record model="ir.ui.view" id="sale_order_view_search_inherit_quotation2">-->
+<!--        <field name="name">search reservation</field>-->
+<!--        <field name="model">sale.order</field>-->
+<!--        <field name="inherit_id" ref="sale.view_sales_order_filter"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//filter[@name='my_sale_orders_filter']" position="after">-->
+<!--                <filter name="quotation_reservation" string="Quotations Generated from reservation"-->
+<!--                        domain="[('id','in','reservation.order_id')]"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <record id="sale_order_view_list_inherit_quotation" model="ir.ui.view">
+        <field name="name">sale.order.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <!-- find field description and add the field
+                 idea_ids after it -->
+            <field name="name" position="after">
+                <field name="reservation_ids" string="Reservation ids"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="sale_order_view_form_inherit_quotation" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- find field description and add the field
+                 idea_ids after it -->
+            <xpath expr="//notebook/page[@name='customer_signature']" position="after">
+                <page string="Reservations">
+                    <field name="reservation_ids"/>
+                </page>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button type="object" name="action_view_reservations" class="oe_stat_button" icon="fa-shopping-cart">
+                    <field name="reservation_count" widget="statinfo" string="Reservation(s)"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+    <!--    <record model="ir.ui.view" id="sale_order_view_form_inherit_quotation">-->
+    <!--        <field name="name">sale.order.form</field>-->
+    <!--        <field name="model">sale.order</field>-->
+    <!--        <field name="inherit_id" ref="sale.view_order_form"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <xpath expr="//div[@name='button_box']" position="inside">-->
+    <!--                <button type="object" name="action_view_reservations" class="oe_stat_button" icon="fa-shopping-cart">-->
+    <!--                    <field name="reservation_count" widget="statinfo" string="Reservation(s)"/>-->
+    <!--                </button>-->
+    <!--            </xpath>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <record model="ir.actions.act_window" id="sales_action">
+        <field name="name">Quotation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="domain">[('reservation_ids','!=', False)]</field>
+    </record>
+</odoo>

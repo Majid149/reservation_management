@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="reservation_view_id">
+            <field name="name">reservation.reservation.form</field>
+            <field name="model">reservation.reservation</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <!-- view content: <form>, <tree>, <graph>, ... -->
+                <form string="Idea form">
+                    <header>
+                        <button name="action_new" type="object"
+                                string="Create New"
+                                states="canceled,closed"/>
+                        <button name="action_confirm" type="object"
+                                string="Confirm" states="new"
+                                class="oe_highlight"/>
+                        <button name="action_validate" type="object"
+                                string="Validate" states="confirmed"
+                                class="oe_highlight" groups="reservation.overtime_manager"/>
+                        <button name="action_cancel" type="object"
+                                string="Cancel" states="validated"
+                                class="oe_highlight" groups="reservation.overtime_manager"/>
+                        <button name="action_close" type="object"
+                                string="Close" states="validated"
+                                class="oe_highlight" groups="reservation.overtime_manager"/>
+                        <button name="action_quote_button" type="object"
+                                string="Create a quote" states="validated"
+                                class="btn btn-success" groups="reservation.overtime_manager"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="reference"/>
+                            <h1>
+                                <field name="reference"/>
+                            </h1>
+                        </div>
+                        <group col="1">
+                            <group>
+                                <field name="client"/>
+                                <field name="reservation_date"/>
+                            </group>
+                            <group col="1">
+                                <group string="Duration">
+                                    <field name="duration_month" string="Month"/>
+                                    <field name="duration_day" string="Day"/>
+                                    <field name="duration_hour" string="hour"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="end_reservation"/>
+                            </group>
+                            <notebook colspan="4">
+                                <page string="Article">
+                                    <field name="article"/>
+                                </page>
+                                <page string="Devis">
+                                    <field name="order_id"/>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="reservation_search">
+            <field name="name">search.reservation</field>
+            <field name="model">reservation.reservation</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="reference"/>
+                    <field name="client"/>
+                    <field name="user_id"/>
+                    <field name="article"/>
+                    <field name="reservation_date"/>
+                    <field name="end_reservation"/>
+                    <filter name="my_reservations" string="My Reservations" domain="[('user_id', '=', uid)]"/>
+                    <separator/>
+                    <filter name="new" string="New Reservations" domain="[('state', '=', 'new')]"/>
+                    <filter name="confirmed" string="Confirmed Reservations" domain="[('state', '=', 'confirmed')]"/>
+                    <filter name="validated'" string="Validated Reservations" domain="[('state', '=', 'validated')]"/>
+                    <filter name="closed" string="Closed Reservations" domain="[('state', '=', 'closed')]"/>
+                    <filter name="canceled" string="Canceled Reservations" domain="[('state', '=', 'canceled')]"/>
+                    <separator/>
+                    <group string="Group By">
+                        <filter name="group_by_client" string="Client"
+                                context="{'group_by': 'client'}"/>
+                        <filter name="group_by_article" string="Article"
+                                context="{'group_by': 'article'}"/>
+                        <filter name="group_by_reservation_date" string="Date of Reservation"
+                                context="{'group_by': 'reservation_date'}"/>
+                    </group>
+
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="reservation_reservation_kanban">
+            <field name="name">reservation.kanban</field>
+            <field name="model">reservation.reservation</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="client">
+                    <field name="reference"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div t-attf-class="#{!selection_mode ? 'text-center' : ''}">
+                                    <strong>
+                                        <field name="reference"/>
+                                    </strong>
+                                </div>
+                                <hr class="mt4 mb4"/>
+                                <div class="row" t-if="!selection_mode">
+                                    <div t-if="record.reservation_date.value" class="col-6 text-center">
+                                        <strong>Reservation Date:</strong>
+                                    </div>
+                                    <div t-if="record.total_duration_hours.value" class="col-6 text-center">
+                                        <strong>Duration:</strong>
+                                    </div>
+
+                                    <div t-if="record.reservation_date.value" class="col-6 text-center">
+                                        <field name="reservation_date"/>
+                                    </div>
+                                    <div t-if="record.total_duration_hours.value" class="col-6 text-center o_force_ltr">
+                                        <field name="total_duration_hours"/>
+                                    </div>
+                                </div>
+                                <div class="row" t-if="!selection_mode">
+                                    <div t-if="record.state.value" class="col-6 text-center">
+                                        <strong>State:</strong>
+                                    </div>
+                                    <div t-if="record.state.value" class="col-6 text-center">
+                                        <field name="state"/>
+                                    </div>
+                                     <div t-if="record.end_reservation.value" class="col-6 text-center">
+                                        <strong>End of Reservation:</strong>
+                                    </div>
+                                    <div t-if="record.end_reservation.value" class="col-6 text-center o_force_ltr">
+                                        <field name="end_reservation"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="reservation.list">
+            <field name="name">reservation.list</field>
+            <field name="model">reservation.reservation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="reference"/>
+                    <field name="client"/>
+                    <field name="user_id"/>
+                    <field name="article"/>
+                    <field name="reservation_date"/>
+                    <field name="total_duration_hours"/>
+                    <field name="state" widget="badge" decoration-success="state == 'validated'" decoration-danger="state == 'canceled'"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="your_id" model="ir.actions.server">
+            <field name="name">Create a quote</field>
+            <field name="model_id" ref="reservation.model_reservation_reservation"/>
+            <field name="binding_model_id" ref="reservation.model_reservation_reservation"/>
+            <field name="binding_view_types">tree,list</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.action_generate_multiple_quotes()
+            </field>
+        </record>
+
+        <record id="seq_reservation_ref" model="ir.sequence">
+            <field name="name">Reservation Sequence</field>
+            <field name="code">reservation.reservation</field>
+            <field name="prefix">RESERV%(year)s%(month)s%(day)s</field>
+            <field name="padding">6</field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="reservation_action">
+            <field name="name">Reservation</field>
+            <field name="res_model">reservation.reservation</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="my_reservation_action">
+            <field name="name">Reservation</field>
+            <field name="res_model">reservation.reservation</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context">{'search_default_my_reservations': 1}</field>
+        </record>
+    </data>
+</odoo>
